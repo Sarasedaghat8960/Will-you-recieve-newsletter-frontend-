@@ -40,7 +40,7 @@ fetch("https://sarasedaghat.herokuapp.com/users")
                 });
 
             }else {
-                document.getElementById("changeSub").insertAdjacentHTML("afterbegin",`<br>You Do not like  to recieve our newsletter <br><br> Do you want to change the subscription status?<br><div><button type="submit" id="Subcription">Yes</div>`);
+                document.getElementById("changeSub").insertAdjacentHTML("afterbegin",`<br>You do not like  to recieve our newsletter <br><br> Do you want to change the subscription status?<br><div><button type="submit" id="Subcription">Yes</div>`);
  // CANCLE SUBCRIPTION IF NEWSLETTER IF False 
                 document.getElementById("Subcription").addEventListener("click",function(){
                     console.log("user name after click yes:",logInUser.name);
