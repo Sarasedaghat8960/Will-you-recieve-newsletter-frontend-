@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Login page</title>
 </head>
 <body>
-    <h1>Wellcome to our page</h1>
-    <h2>you can log in here</h2>
-    <div >
-        <div><input type="email" id="userName">Enter your email adress</div>
-        <div><input type="password" id="password">Enter your Password</div>
-        <div><button type="submit" id="login">log in </button></div>
-        <div id="welcomeLogin"></div>
-        <div id="changeSub"></div>
-        <div id="notmember">
-            <h2>If you are not our member click here </h2>
-            <div><a href="/register.html">Register your self</a></div>
+    <div class="container">
+        <div class="loginSection">
+            <img src="/img/login.jpg" alt="login">
+            <h1>Wellcome to our page</h1>
+            <h2>you can log in here</h2>
+            <div><input type="email" id="userName">Enter your email adress</div>
+            <div><input type="password" id="password">Enter your Password</div>
+            <div><button type="submit" id="login">log in </button></div>
+            <div id="welcomeLogin"></div>
+            <div id="changeSub"></div>
+            <div id="afterChangeSub"></div>
         </div>
-    </div>
-    <h1>If you are not our member </h1>
-    <h2>you can register yourself here</h2>
-    <div >
-        <div><input type="text" id="regName">Enter your name</div>
-        <div><input type="email" id="regUserName">Enter your email adress</div>
-        <div><input type="password" id="regPassword">Enter your Password</div>
-        <div><input type="checkbox" id="newsLetter" name="newsLetter" value="yes">I would like to recieve your news letter every week?</div>
-        <div><button type="submit" id="register">register</button></div>
-        <div id="welcomeReg"></div>
-    </div>
-    <div id="login"></div>
-    <div id="login"></div>
+        <div id="registerSection">
+            <img src="/img/register.jpg" alt="login">
+            <h1>If you are not our member </h1>
+            <h2>you can register yourself here</h2>
+            <div >
+                <div><input type="text" id="regName">Enter your name</div>
+                <div><input type="email" id="regUserName">Enter your email adress</div>
+                <div><input type="password" id="regPassword">Enter your Password</div>
+                <div><input type="checkbox" id="newsLetter" name="newsLetter" value="yes">I would like to recieve your news letter every week?</div>
+                <div><button type="submit" id="register">register</button></div>
+                <div id="welcomeReg"></div>
+            </div>
+        </div>
+
+ 
+    
+   
+   
     <script src="script.js"></script>
 </body>
 </html>

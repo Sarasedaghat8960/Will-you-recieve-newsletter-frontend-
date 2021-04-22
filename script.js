@@ -20,6 +20,7 @@ fetch("https://sarasedaghat.herokuapp.com/users")
                 console.log(users[user]);
  // CANCLE SUBCRIPTION IF NEWSLETTER IF TRUE 
                 document.getElementById("Subcription").addEventListener("click",function(){
+                    document.getElementById("afterChangeSub").insertAdjacentHTML("afterbegin",`Your subscription status is changed`)
                     console.log("user name after click yes:",logInUser.name);
                     logInUser.newsLetter=false;
                     let change= logInUser;
@@ -43,6 +44,7 @@ fetch("https://sarasedaghat.herokuapp.com/users")
                 document.getElementById("changeSub").insertAdjacentHTML("afterbegin",`<br>You do not like  to recieve our newsletter <br><br> Do you want to change the subscription status?<br><div><button type="submit" id="Subcription">Yes</div>`);
  // CANCLE SUBCRIPTION IF NEWSLETTER IF False 
                 document.getElementById("Subcription").addEventListener("click",function(){
+                    document.getElementById("afterChangeSub").insertAdjacentHTML("afterbegin",`Your subscription status is changed`)
                     console.log("user name after click yes:",logInUser.name);
                     logInUser.newsLetter=true;
                     let change= logInUser;
