@@ -6,7 +6,7 @@ document.getElementById("login").addEventListener("click",function(){
     console.log(checkUser);
     //console.log(newUser); 
 //  CHECK USER FOR LOGIN    
-    fetch("http://localhost:3005/users/login", {
+    fetch("https://sarasedaghat.herokuapp.com/users/login", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ document.getElementById("login").addEventListener("click",function(){
             localStorage.setItem("UserId", JSON.stringify(res.id));
             let Id=JSON.parse(localStorage.getItem("UserId"));
             console.log(Id);
-            fetch("http://localhost:3005/users")
+            fetch("https://sarasedaghat.herokuapp.com/users")
             .then(res=>res.json())
             .then(users=>{
 // WRITE THE NAME OF USER
@@ -42,7 +42,7 @@ document.getElementById("login").addEventListener("click",function(){
                             logInUser.newsLetter=false;
                             let change= logInUser;
                             console.log("user info after changed subcription  :",change);
-                            fetch("http://localhost:3005/users/change", {
+                            fetch("hhttps://sarasedaghat.herokuapp.com/users/change", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -64,7 +64,7 @@ document.getElementById("login").addEventListener("click",function(){
                             logInUser.newsLetter=true;
                             let change= logInUser;
                             console.log("user info after changed subcription  :",change);
-                            fetch("http://localhost:3005/users/change", {
+                            fetch("https://sarasedaghat.herokuapp.com/users/change", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -91,7 +91,7 @@ document.getElementById("login").addEventListener("click",function(){
        
 
 //REGISTRATION PART 
-fetch("http://localhost:3005/users")
+fetch("https://sarasedaghat.herokuapp.com/users")
 .then(res=>res.json())
 .then(users=>console.log(users));
 
@@ -105,7 +105,7 @@ document.getElementById("register").addEventListener("click",function(){
     let newUser= {"name":document.getElementById("regName").value,"userName":document.getElementById("regUserName").value,"password":document.getElementById("regPassword").value,"newsLetter":document.getElementById("newsLetter").checked};
     console.log(newUser);
     //console.log(newUser);      
-    fetch("http://localhost:3005/users/new", {
+    fetch("https://sarasedaghat.herokuapp.com/users/new", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
