@@ -10,6 +10,9 @@ html, body {
     flex-wrap: nowrap;
     
 }
+#welcomeReg{
+    display: none;
+}
 .loginSection{
     border: 2px solid black;
     padding:20px;   
