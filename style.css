@@ -34,3 +34,6 @@ button{
     align-content: center;
     border-radius: 10px;
 }
+#logOut{
+    display:none;
+}

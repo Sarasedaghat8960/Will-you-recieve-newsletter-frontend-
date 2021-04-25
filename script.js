@@ -17,10 +17,10 @@ document.getElementById("login").addEventListener("click",function(){
     .then(res=>{
         console.log("users from login:",res);
         if(res.code=="ok"){
-            console.log("Login succeed");
+            //console.log("Login succeed");
             localStorage.setItem("UserId", JSON.stringify(res.id));
             let Id=JSON.parse(localStorage.getItem("UserId"));
-            console.log(Id);
+            //console.log(Id);
             fetch("http://localhost:3005/users")
             .then(res=>res.json())
             .then(users=>{
@@ -33,12 +33,12 @@ document.getElementById("login").addEventListener("click",function(){
                     let logInUser=users[user]
                     if(users[user].newsLetter==true){
                         document.getElementById("changeSub").insertAdjacentHTML("afterbegin",users[user].name+`!You asked to recieve our newsletter <br><br> Do you want to change the subscription status?<br><div><button type="submit" id="Subcription">Yes</div>`);
-                        console.log(users[user]);
+                       // console.log(users[user]);
                         
                     // CANCLE SUBCRIPTION IF NEWSLETTER IF TRUE 
                         document.getElementById("Subcription").addEventListener("click",function(){
                             document.getElementById("afterChangeSub").insertAdjacentHTML("afterbegin",`<h3>Your subscription status is now changed</h3>`)
-                            console.log("user name after click yes:",logInUser.name);
+                           // console.log("user name after click yes:",logInUser.name);
                             logInUser.newsLetter=false;
                             let change= logInUser;
                             console.log("user info after changed subcription  :",change);
@@ -53,6 +53,7 @@ document.getElementById("login").addEventListener("click",function(){
                             })
                             .then(res=>res.json())
                             .then(users=>{
+                               
                                 console.log(users);
                             });  //then                       
                         });//addeventlistner
@@ -62,10 +63,10 @@ document.getElementById("login").addEventListener("click",function(){
                     // CANCLE SUBCRIPTION IF NEWSLETTER IF False 
                         document.getElementById("Subcription").addEventListener("click",function(){
                             document.getElementById("afterChangeSub").insertAdjacentHTML("afterbegin",`<h3>Your subscription status is now changed</h3>`)
-                            console.log("user name after click yes:",logInUser.name);
+                           // console.log("user name after click yes:",logInUser.name);
                             logInUser.newsLetter=true;
                             let change= logInUser;
-                            console.log("user info after changed subcription  :",change);
+                           // console.log("user info after changed subcription  :",change);
                             fetch("http://localhost:3005/users/change", {
                                 method: "POST",
                                 headers: {
@@ -75,11 +76,18 @@ document.getElementById("login").addEventListener("click",function(){
                             })
                             .then(res=>res.json())
                             .then(users=>{
-                                console.log(users);
+                               
+                                //console.log(users);
                             }); //then                        
                         });//addeventlistner
                         
                     }
+                    document.getElementById("logOut").style.display="block"  ; 
+                    document.getElementById("logOut").addEventListener("click",function(){
+                        localStorage.removeItem("UserId");
+                        location.reload();
+                    })
+
                 }
             }
             })//then
@@ -95,7 +103,9 @@ document.getElementById("login").addEventListener("click",function(){
 //REGISTRATION PART 
 fetch("http://localhost:3005/users")
 .then(res=>res.json())
-.then(users=>console.log(users));
+.then(users=>{
+    //console.log(users)
+});
 
 document.getElementById("register").addEventListener("click",function(){
     document.getElementById("welcomeReg").innerHTML="";
@@ -105,7 +115,7 @@ document.getElementById("register").addEventListener("click",function(){
 
 
     let newUser= {"name":document.getElementById("regName").value,"userName":document.getElementById("regUserName").value,"password":document.getElementById("regPassword").value,"newsLetter":document.getElementById("newsLetter").checked};
-    console.log(newUser);
+    //console.log(newUser);
     //console.log(newUser);      
     fetch("http://localhost:3005/users/new", {
     method: "POST",
@@ -116,8 +126,8 @@ document.getElementById("register").addEventListener("click",function(){
     })
     .then(res=>res.json())
     .then(users=>{
-        console.log("users from reg:",users);
-        console.log(users);
+       // console.log("users from reg:",users);
+       // console.log(users);
        
     });
    
