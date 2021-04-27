@@ -77,7 +77,7 @@ document.getElementById("login").addEventListener("click",function(){
                             .then(res=>res.json())
                             .then(users=>{
                                
-                                //console.log(users);
+                                console.log(users);
                             }); //then                        
                         });//addeventlistner
                         
@@ -91,15 +91,13 @@ document.getElementById("login").addEventListener("click",function(){
                 }
             }
             })//then
-         }  
+         } 
+         else{
+            document.getElementById("welcomeLogin").insertAdjacentHTML("afterbegin","Username or password is incorrect!");      
+         } 
     });
 });
-
-
-          
-
-       
-
+  
 //REGISTRATION PART 
 fetch("https://sasrasara.herokuapp.com/users")
 .then(res=>res.json())
