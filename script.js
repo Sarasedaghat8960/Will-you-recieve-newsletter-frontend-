@@ -115,18 +115,24 @@ document.getElementById("register").addEventListener("click",function(){
 
 
     let newUser= {"name":document.getElementById("regName").value,"userName":document.getElementById("regUserName").value,"password":document.getElementById("regPassword").value,"newsLetter":document.getElementById("newsLetter").checked};
-    //console.log(newUser);
+    console.log(newUser);
     //console.log(newUser);      
     fetch("https://sasrasara.herokuapp.com/users/new", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
+        'Accept': 'application/json'
     },
     body: JSON.stringify(newUser)
     })
     .then(res=>res.json())
     .then(users=>{
-       // console.log("users from reg:",users);
+        
+            // window.location.replace('/');
+        
+             
+
+        console.log("users from reg:",users);
        // console.log(users);
        
     });
